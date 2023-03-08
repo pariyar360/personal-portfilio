@@ -9,6 +9,7 @@
 h1, h2, h3, h4, h5, h6, span {
     font-family: 'Lato', sans-serif;
     color:  #242424;
+    text-align: center;
 }
 
 h1 {
@@ -22,6 +23,10 @@ p {
 
 li {
     list-style-type: none;
+}
+
+.container {
+    padding: 50px 0;
 }
 
 .flex {
@@ -41,6 +46,16 @@ li {
 .text--purple {
     color: #6030b1;
 }
+
+/* resuable code to change background color with every even section */
+section:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.section__title {
+    margin-bottom: 16px;
+}
+
 /* NAVIGATION SETUP */
 
 nav {
@@ -144,4 +159,53 @@ nav {
 
 .about-me__img {
     width: 100%;
+}
+
+/* Tech Languages */
+
+.language__img {
+    width: 100%;
+    max-width: 100px;
+    transition: all 300ms;
+
+}
+
+.language:hover .language__img{
+    filter: brightness(80%);
+    opacity: 0.85;
+    transform: scale(0.9);
+}
+
+.language__img--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+.language {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 25%;
+    align-items: center;
+    position: relative;
+}
+
+.language__list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.language__name {
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: all 300ms;
+    font-size: 20px;
+}
+
+.language:hover .language__name{
+    transform: scale(1);
 }
