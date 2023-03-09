@@ -37,6 +37,7 @@ li {
 
 a {
     text-decoration: none;
+    position: relative;
 }
 
 .container {
@@ -55,10 +56,34 @@ a {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 12px;
 }
 
 .text--purple {
   color: #6030b1;
+}
+
+.link__hover-effect:after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: -3px;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.link__hover-effect:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.link__hover-effect--white:after{
+    background-color: #fff;
+}
+
+.link__hover-effect--black:after{
+    background-color: #000;
 }
 
 /* resuable code to change background color with every even section */
@@ -80,6 +105,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 12px;
 }
 
 .nav__link--list {
@@ -208,6 +234,7 @@ nav {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .language__name {
@@ -335,4 +362,66 @@ footer {
 
 .footer__social--link {
   color: #f8f8f8;
+}
+
+/* Responsiveness */
+
+/* Small phones, tablets and large phones */
+@media (max-width: 768px) {
+    nav {
+        height: 68px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .about-me__info--para {
+        font-size: 24px;
+    }
+
+    .language {
+        width: 50%;
+    }
+
+    .project__description--para {
+        font-size: 16px;
+    }
+
+    .project__description {
+        left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav__link:not(:last-child) {
+        display: none;
+    }
+
+    .project__description--para {
+        display: none;
+    }
+
+    .project__description {
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .project__description--links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .project__description--title {
+        font-size: 32px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .project__description--sub-title {
+        text-align: center;
+        margin: 12px 0;
+    }
 }
