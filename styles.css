@@ -334,6 +334,7 @@ nav {
   overflow: hidden;
   position: relative;
 }
+
 .project__wrapper:before {
   content: "";
   position: absolute;
